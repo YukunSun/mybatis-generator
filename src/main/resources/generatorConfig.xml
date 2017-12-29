@@ -27,7 +27,7 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置, 当前路径和src在一层， 自动创建包和类 -->
-        <javaModelGenerator targetPackage="entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="net.shopin.baseinfo.domain.entity" targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 从数据库返回的值被清理前后的空格 -->
@@ -35,18 +35,25 @@
         </javaModelGenerator>
 
         <!-- targetProject:mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="net.shopin.baseinfo.persistence" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!-- targetPackage：mapper接口生成的位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="net.shopin.baseinfo.persistence"
+                             targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
         <!-- 指定数据库表 -->
-        <table schema="mybatis" tableName="ssd_stock"></table>
-        <!--<table schema="mybatis" tableName="orderdetail"></table>-->
+        <table schema="" tableName="ssd_rent_supply_brand_category" domainObjectName="SsdRentSupplyBrandCategory"
+               enableCountByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false">
+
+            <!--<generatedKey column="sid" sqlStatement="Mysql" identity="true"></generatedKey>-->
+        </table>
 
 
         <!--<table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >-->
